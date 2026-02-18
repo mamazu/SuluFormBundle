@@ -23,13 +23,13 @@ class FormTokenController
 
     public function tokenAction(Request $request): Response
     {
-        $formName = $request->get('form');
+        $formName = $request->query->get('form');
         $formName = \is_string($formName) ? $formName : '';
         $csrfToken = $this->csrfTokenManager->getToken($formName)->getValue();
 
         $content = $csrfToken;
 
-        if ($request->get('html')) {
+        if ($request->query->get('html')) {
             $formName = \htmlspecialchars($formName, \ENT_QUOTES, 'UTF-8');
             $csrfToken = \htmlspecialchars($csrfToken, \ENT_QUOTES, 'UTF-8');
 

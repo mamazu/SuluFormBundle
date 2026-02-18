@@ -199,7 +199,7 @@ class FormController extends AbstractRestController implements SecuredController
 
     public function getLocale(Request $request): string
     {
-        return $request->get('locale', $request->getLocale());
+        return $request->query->getString('locale', $request->getLocale());
     }
 
     /**
