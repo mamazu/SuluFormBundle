@@ -359,7 +359,7 @@ class SuluFormExtension extends Extension implements PrependExtensionInterface
         }
 
         if ($config['media']['protected']) {
-            $loader->load('services_media.php');
+            $loader->load('protected_media.php');
         }
     }
 }
