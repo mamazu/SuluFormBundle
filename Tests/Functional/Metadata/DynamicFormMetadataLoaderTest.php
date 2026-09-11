@@ -63,13 +63,11 @@ class DynamicFormMetadataLoaderTest extends SuluTestCase
 
         $fields = $formFields->getItems()['fields'];
         $this->assertInstanceOf(FieldMetadata::class, $fields);
-        $this->assertCount(28, $fields->getTypes());
         $this->assertEquals('fields', $fields->getName());
         $this->assertEquals('block', $fields->getType());
         $this->assertEquals('attachment', $fields->getDefaultType());
         $this->assertEqualsCanonicalizing([
             'attachment',
-            'recaptcha',
             'checkbox',
             'checkboxMultiple',
             'city',
@@ -122,7 +120,6 @@ class DynamicFormMetadataLoaderTest extends SuluTestCase
 
         $fields = $formFields->getItems()['fields'];
         $this->assertInstanceOf(FieldMetadata::class, $fields);
-        $this->assertCount(28, $fields->getTypes());
         $this->assertEquals('fields', $fields->getName());
         $this->assertEquals('block', $fields->getType());
         $this->assertEquals('attachment', $fields->getDefaultType());
@@ -130,7 +127,6 @@ class DynamicFormMetadataLoaderTest extends SuluTestCase
             'attachment',
             'salutation',
             'state',
-            'recaptcha',
             'checkbox',
             'checkboxMultiple',
             'date',
@@ -229,7 +225,7 @@ class DynamicFormMetadataLoaderTest extends SuluTestCase
 
         $fields = $formFields->getItems()['fields'];
         $this->assertInstanceOf(FieldMetadata::class, $fields);
-        $this->assertCount(28, $fields->getTypes());
+        $this->assertCount(27, $fields->getTypes());
 
         $attachment = $fields->getTypes()['attachment'];
         $this->assertInstanceOf(FormMetadata::class, $attachment);
@@ -298,7 +294,7 @@ class DynamicFormMetadataLoaderTest extends SuluTestCase
 
         $fields = $formFields->getItems()['fields'];
         $this->assertInstanceOf(FieldMetadata::class, $fields);
-        $this->assertCount(28, $fields->getTypes());
+        $this->assertCount(27, $fields->getTypes());
 
         $attachment = $fields->getTypes()['attachment'];
         $this->assertInstanceOf(FormMetadata::class, $attachment);
